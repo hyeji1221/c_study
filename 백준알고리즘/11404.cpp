@@ -39,7 +39,8 @@ int main(void)
 	}
 	for (int i = 0; i < m; i++) {
 		cin >> start >> finish >> cost;
-		//if (arr[start - 1][finish - 1] > cost)
+		// 입력받을 때 start와 finish가 같은수가 또 입력받는 경우가 있기 때문
+		if (arr[start - 1][finish - 1] > cost) 
 			arr[start - 1][finish - 1] = cost;
 	}
 	floyd();
