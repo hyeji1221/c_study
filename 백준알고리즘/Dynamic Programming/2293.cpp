@@ -1,8 +1,8 @@
 #include <iostream>
 #include <algorithm>
-/*Ã¹ ¹øÂ° µ¿Àü¸¸ »ç¿ëÇÏ¿© °¢ k°ª ¸¶´Ù °¡´ÉÇÑ °æ¿ìÀÇ ¼ö¸¦ Ã£´Â´Ù.
-Ã¹ ¹øÂ°~µÎ ¹øÂ° µ¿Àü¸¸ »ç¿ëÇÏ¿´À» ¶§, °¢k °ª ¸¶´Ù °¡´ÉÇÑ °æ¿ìÀÇ ¼ö¸¦ Ã£´Â´Ù.ÀÌ ¶§, Ã¹ ¹øÂ° µ¿Àü¸¸ »ç¿ëÇØ¼­ ±¸Çß´ø °æ¿ìÀÇ ¼ö¸¦ È°¿ëÇÑ´Ù.
-Ã¹ ¹øÂ°~n ¹øÂ° µ¿ÀüÀ» »ç¿ëÇÏ¿´À» ¶§±îÁö ¹Ýº¹ÇÑ´Ù.*/
+/*ì²« ë²ˆì§¸ ë™ì „ë§Œ ì‚¬ìš©í•˜ì—¬ ê° kê°’ ë§ˆë‹¤ ê°€ëŠ¥í•œ ê²½ìš°ì˜ ìˆ˜ë¥¼ ì°¾ëŠ”ë‹¤.
+ì²« ë²ˆì§¸~ë‘ ë²ˆì§¸ ë™ì „ë§Œ ì‚¬ìš©í•˜ì˜€ì„ ë•Œ, ê°k ê°’ ë§ˆë‹¤ ê°€ëŠ¥í•œ ê²½ìš°ì˜ ìˆ˜ë¥¼ ì°¾ëŠ”ë‹¤.ì´ ë•Œ, ì²« ë²ˆì§¸ ë™ì „ë§Œ ì‚¬ìš©í•´ì„œ êµ¬í–ˆë˜ ê²½ìš°ì˜ ìˆ˜ë¥¼ í™œìš©í•œë‹¤.
+ì²« ë²ˆì§¸~n ë²ˆì§¸ ë™ì „ì„ ì‚¬ìš©í•˜ì˜€ì„ ë•Œê¹Œì§€ ë°˜ë³µí•œë‹¤.*/
 using namespace std;
 int main(void)
 {
@@ -18,8 +18,7 @@ int main(void)
 	dp[0] = 1;
 	for (int i = 0; i < n; i++) {
 		for (int j = coin[i]; j <= k ; j++) {
-			dp[j] = dp[j] + dp[j - coin[i]]; // dp°ªÀÌ º¯ÇÏ´Â°Í ÀÚÃ¼°¡ coinÀ¸·Î °¡´ÉÇÏ±â ¶§¹®
-			cout <<"dp "<<dp[j-coin[i]]<< " coin[i] " << coin[i]<<" ";
+			dp[j] = dp[j] + dp[j - coin[i]]; // dpê°’ì´ ë³€í•˜ëŠ”ê²ƒ ìžì²´ê°€ coinìœ¼ë¡œ ê°€ëŠ¥í•˜ê¸° ë•Œë¬¸
 		}
 	}
 	cout << dp[k] << "\n";
